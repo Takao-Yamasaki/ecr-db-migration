@@ -1,6 +1,10 @@
+version: 2.1
+
 jobs:
+  # ECRからイメージ取得
   pull_image:
     docker:
       - image: $ECR_IMAGE_URI
         aws_auth:
           oidc_role_arn: $IAM_ROLE_ARN
+ 
