@@ -1,0 +1,6 @@
+jobs:
+  job_name:
+    docker:
+      - image: <your-image-uri>
+        aws_auth:
+          oidc_role_arn: <your-iam-role-arn>
