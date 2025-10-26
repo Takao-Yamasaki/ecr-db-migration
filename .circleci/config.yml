@@ -1,6 +1,6 @@
 jobs:
-  job_name:
+  pull_image:
     docker:
-      - image: <your-image-uri>
+      - image: $ECR_IMAGE_URI
         aws_auth:
-          oidc_role_arn: <your-iam-role-arn>
+          oidc_role_arn: $IAM_ROLE_ARN
