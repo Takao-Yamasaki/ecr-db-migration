@@ -19,6 +19,6 @@ workflows:
   main:
     jobs:
       - db-migration-test:
-        context:
-          - ecr-db-migration
+          context:
+            - ecr-db-migration
 
