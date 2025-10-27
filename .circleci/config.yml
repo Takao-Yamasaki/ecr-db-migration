@@ -7,6 +7,8 @@ jobs:
       - image: $ECR_IMAGE_URI
         aws_auth:
           oidc_role_arn: $IAM_ROLE_ARN
+        command:
+          - --innodb-use-native-aio=0 # AIOを無効化
 
     steps:
       - checkout
