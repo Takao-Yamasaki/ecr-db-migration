@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  db-migration-test
+  db-migration-test:
     docker:
       - image: cimg/base:stable
       - image: $ECR_IMAGE_URI
