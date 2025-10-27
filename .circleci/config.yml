@@ -1,12 +1,24 @@
 version: 2.1
 
 jobs:
-  # ECRからイメージ取得
-  pull_image:
+  db-migration-test
     docker:
+      - image: cimg/base:stable
       - image: $ECR_IMAGE_URI
         aws_auth:
           oidc_role_arn: $IAM_ROLE_ARN
 
     steps:
       - checkout
+      - run:
+          name: Run migrations
+          command: echo "Running migrations..." 
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - db-migration-test:
+        context:
+          - ecr-db-migration
+
